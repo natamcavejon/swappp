@@ -1,0 +1,1 @@
+{"version":3,"file":"tagone-message-location.js","names":["loc","lat","lng"],"sources":["../../src/mapper/tagone-message-location.js"],"sourcesContent":["export default {\n  loc: 'loc',\n  lat: 'lat',\n  lng: 'lng',\n};\n"],"mappings":"mHAAe;EACbA,GAAG,EAAE,KAAK;EACVC,GAAG,EAAE,KAAK;EACVC,GAAG,EAAE;AACP,CAAC"}
