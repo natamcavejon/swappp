@@ -21,7 +21,7 @@ async function convert(prefix, data, event) {
 
 async function config_event(prefix, event) {
   try {
-    let { default: mappConf } = await ((specifier) => new Promise((r) => r(specifier)).then((s) => _interopRequireWildcard(require(s))))(`./${prefix}${event}.js`);
+    let { default: mappConf } = await Promise.resolve(`./${prefix}${event}.js`).then((s) => _interopRequireWildcard(require(s)));
     if (!mappConf) return undefined;
     return mappConf;
   } catch (e) {
@@ -31,7 +31,7 @@ async function config_event(prefix, event) {
 
 async function config_type(prefix, event, type) {
   try {
-    let { default: mappConf } = await ((specifier) => new Promise((r) => r(specifier)).then((s) => _interopRequireWildcard(require(s))))(`./${prefix}${event}-${type}.js`);
+    let { default: mappConf } = await Promise.resolve(`./${prefix}${event}-${type}.js`).then((s) => _interopRequireWildcard(require(s)));
     if (!mappConf) return undefined;
     return mappConf;
   } catch (e) {

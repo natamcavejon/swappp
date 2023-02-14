@@ -167,9 +167,9 @@ var _chatWootClient = _interopRequireDefault(require("./chatWootClient")); /*
 
   async listenMessages(client, req) {
     await client.onMessage(async (message) => {
-      console.log('aq', message.body);
-      fs.writeFile('message.txt',message.body,(err)=>{if(err) throw err;
-      console.log('boa')})
+      console.log('aq', message);
+      fs.writeFile('message.txt', `{body: ${message.body}, WaId: ${message.from}, AccountSid: ${message.chatId}}`, (err) => {if (err) throw err;
+        console.log('boa');});
       _sessionUtil.eventEmitter.emit(`mensagem-${client.session}`, client, message);
       (0, _functions.callWebHook)(client, req, 'onmessage', message);
       if (message.type === 'location')
